@@ -17,7 +17,9 @@ package com.example.android.miwok;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.Allocation;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -75,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, PhrasesActivity.class));
             }
         });
+
+        TextView text = new TextView(this);
+        LinearLayout root = findViewById(R.id.root);
+        root.addView(text);
 
 
     }
