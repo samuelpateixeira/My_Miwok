@@ -11,7 +11,16 @@ public class Word {
     private boolean mHasImage = false;
     private int mSoundResourceId = -1;
 
-
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mEnglishTranslation='" + mEnglishTranslation + '\'' +
+                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mImageResource=" + mImageResource +
+                ", mHasImage=" + mHasImage +
+                ", mSoundResourceId=" + mSoundResourceId +
+                '}';
+    }
 
     // Getters
     public String getEnglishTranslation() {

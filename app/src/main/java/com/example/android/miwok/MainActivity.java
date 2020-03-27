@@ -15,9 +15,11 @@
  */
 package com.example.android.miwok;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.renderscript.Allocation;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -26,6 +28,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+    Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +37,20 @@ public class MainActivity extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
+        // Create intent
+        Intent wordsActivityIntent = new Intent(context, WordsActivity.class);
+
         // Numbers
+
+
         // Find the View that shows the numbers category
         TextView numbers = findViewById(R.id.numbers);
         // Setting the click listener on the numbers view
         numbers.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, NumbersActivity.class));
+                wordsActivityIntent.putExtra("type", "Numbers");
+                startActivity(wordsActivityIntent);
             }
         });
 
@@ -52,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
         familyMembers.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, FamilyMembersActivity.class));
+                wordsActivityIntent.putExtra("type", "Family Members");
+                startActivity(wordsActivityIntent);
             }
         });
 
@@ -63,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
         colors.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ColorsActivity.class));
+                wordsActivityIntent.putExtra("type", "Colors");
+                startActivity(wordsActivityIntent);
             }
         });
 
@@ -74,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
         phrases.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, PhrasesActivity.class));
+                wordsActivityIntent.putExtra("type", "Phrases");
+                startActivity(wordsActivityIntent);
             }
         });
 
@@ -82,7 +94,43 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout root = findViewById(R.id.root);
         root.addView(text);
 
-
+        Log.v("MainActivity", "onCreate");
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.v("MainActivity", "onStart");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.v("MainActivity", "onRestart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.v("MainActivity", "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.v("MainActivity", "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.v("MainActivity", "onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.v("MainActivity", "onDestroy");
+    }
 }
+

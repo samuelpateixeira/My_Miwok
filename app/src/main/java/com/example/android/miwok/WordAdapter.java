@@ -62,7 +62,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         //textViewGroup.setBackgroundColor(getContext().getResources().getColor(mColorResourceId));
         parentView.setBackgroundColor(getContext().getResources().getColor(mColorResourceId));
 
-        // Handle playing sound
+    /*    // Handle playing sound
         if (currentWord.getSoundResourceId() != -1) {
             MediaPlayer mediaPlayer = MediaPlayer.create(getContext(), currentWord.getSoundResourceId());
             wordView.setOnClickListener(
@@ -73,7 +73,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
                     }
                 }
             );
-        }
+        }*/
         return wordView;
 
     }
