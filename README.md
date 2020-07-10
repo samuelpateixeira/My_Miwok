@@ -1,3 +1,5 @@
+I started learning to develop apps with java about a month and a half before the start of this semester, using Udacity. This project was mostly following the instructions in the Udacity course, and sometimes changing things to my liking.
+
 Miwok App
 ===================================
 
