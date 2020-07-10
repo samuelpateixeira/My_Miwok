@@ -29,6 +29,11 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">18sp</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="CategoryStyleNumbers" parent="CategoryStyle">
+        <item name="background">@color/category_numbers</item>
     </style>
 
 </resources>
